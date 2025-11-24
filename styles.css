@@ -502,3 +502,96 @@ body.horizontal .btn-download:hover {
   }
 
 }
+
+/* ==========================================================
+   MOBILE LANDSCAPE FIX (Hybrid layout)
+   Applies to ANY phone rotated sideways
+   ========================================================== */
+@media (max-width: 820px) and (orientation: landscape) {
+
+  /* Keep layout centered */
+  body.horizontal {
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 15px;
+  }
+
+  /* CARD becomes small + 2-column hybrid */
+  .card {
+    width: 95% !important;
+    max-width: 95% !important;
+    padding: 20px !important;
+    border-radius: 18px !important;
+    display: grid !important;
+    grid-template-columns: 120px 1fr !important; /* Profile | Content */
+    gap: 14px !important;
+    margin-top: 60px; /* Avoid touching top buttons */
+    transform: scale(0.95);
+  }
+
+  /* PROFILE */
+  .profile {
+    width: 110px !important;
+    height: 110px !important;
+    border-radius: 14px !important;
+    margin: 0 !important;
+  }
+
+  /* CONTENT AREA */
+  h1 {
+    font-size: 1.3rem !important;
+    line-height: 1.2 !important;
+  }
+
+  h3 {
+    font-size: 0.85rem !important;
+    margin-bottom: 10px !important;
+  }
+
+  .tagline {
+    font-size: 0.75rem !important;
+    line-height: 1.35 !important;
+    margin-bottom: 12px !important;
+  }
+
+  /* SKILLS MINI GRID */
+  .skills {
+    gap: 6px !important;
+    margin-bottom: 10px !important;
+    justify-content: flex-start !important;
+  }
+
+  .chip {
+    padding: 4px 8px !important;
+    font-size: 0.65rem !important;
+    border-radius: 10px !important;
+  }
+
+  /* ACTION BUTTONS */
+  .links a {
+    padding: 8px !important;
+    font-size: 0.75rem !important;
+    border-radius: 8px !important;
+    width: 100% !important;
+  }
+
+  /* DOWNLOAD BUTTON */
+  .btn-download {
+    padding: 8px !important;
+    font-size: 0.75rem !important;
+    width: 100% !important;
+    border-radius: 8px !important;
+  }
+
+  /* TOP CONTROLS FIX */
+  .top-controls {
+    top: 5px !important;
+    right: 5px !important;
+    gap: 6px !important;
+  }
+  .top-controls button {
+    padding: 6px 8px !important;
+    font-size: 0.7rem !important;
+  }
+}
+
