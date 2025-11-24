@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Modern Virtual Business Card</title>
   <link rel="stylesheet" href="styles.css" />
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 </head>
 <body class="light vertical">
 
@@ -45,6 +47,18 @@ download="Kudzaiishe_Nyenza.vcf"
 class="btn-download">⬇ Download vCard</a>
 
 </div>
+<!-- QR MODAL BUTTON -->
+<button id="show-qr" class="qr-btn">📱 Show QR</button>
+
+<!-- QR POPUP CONTAINER -->
+<div id="qr-modal" class="qr-modal">
+  <div class="qr-content">
+    <span id="close-qr" class="qr-close">&times;</span>
+    <h2>Scan Me</h2>
+    <div id="qrcode"></div>
+    <a id="download-qr" class="qr-download">Download QR</a>
+  </div>
+</div>
 
 <script>
   const darkToggle = document.getElementById('toggle-dark');
@@ -59,7 +73,42 @@ class="btn-download">⬇ Download vCard</a>
     body.classList.toggle('horizontal');
     body.classList.toggle('vertical');
   };
+
+  /* ---------- QR CODE POPUP LOGIC ---------- */
+const qrModal = document.getElementById("qr-modal");
+const showQR = document.getElementById("show-qr");
+const closeQR = document.getElementById("close-qr");
+
+showQR.onclick = () => {
+  qrModal.style.display = "flex";
+
+  // Generate QR only once
+  if (!document.querySelector("#qrcode img")) {
+    const qr = new QRCode(document.getElementById("qrcode"), {
+      text: "https://kudzie13.github.io/virtual-business-card/",
+      width: 180,
+      height: 180
+    });
+  }
+};
+
+// Close QR
+closeQR.onclick = () => qrModal.style.display = "none";
+qrModal.onclick = (e) => {
+  if (e.target === qrModal) qrModal.style.display = "none";
+};
+
+/* Download QR */
+document.getElementById("download-qr").onclick = () => {
+  const qrImage = document.querySelector("#qrcode img").src;
+  const link = document.createElement("a");
+  link.href = qrImage;
+  link.download = "Kudzaiishe_Nyenya_QR.png";
+  link.click();
+};
+
 </script>
 
 </body>
 </html>
+
