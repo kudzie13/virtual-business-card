@@ -595,3 +595,77 @@ body.horizontal .btn-download:hover {
   }
 }
 
+/* ==========================================================
+   FINAL OVERRIDE — FIX LANDSCAPE ON ALL MOBILE DEVICES
+   ========================================================== */
+@media (max-width: 900px) and (orientation: landscape) {
+
+  /* Force vertical mobile-friendly view */
+  body.horizontal .card {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 18px !important;
+    border-radius: 18px !important;
+    display: grid !important;
+    grid-template-columns: 120px 1fr !important;
+    gap: 16px !important;
+    margin-top: 60px !important;
+    box-shadow: 0 0 0 rgba(0,0,0,0) !important;
+  }
+
+  body.horizontal {
+    flex-direction: column !important;
+    padding: 10px !important;
+  }
+
+  /* Profile */
+  .profile {
+    width: 110px !important;
+    height: 110px !important;
+    margin: 0 !important;
+    border-radius: 14px !important;
+  }
+
+  /* Text */
+  h1 {
+    font-size: 1.25rem !important;
+  }
+  h3 {
+    font-size: 0.85rem !important;
+  }
+
+  .tagline {
+    font-size: 0.75rem !important;
+    margin-bottom: 12px !important;
+  }
+
+  /* Skills */
+  .skills {
+    gap: 6px !important;
+  }
+  .chip {
+    font-size: 0.65rem !important;
+    padding: 4px 8px !important;
+  }
+
+  /* Buttons */
+  .links a,
+  .btn-download {
+    width: 100% !important;
+    padding: 8px !important;
+    font-size: 0.75rem !important;
+    border-radius: 8px !important;
+  }
+
+  /* Controls */
+  .top-controls {
+    top: 5px !important;
+    right: 5px !important;
+    gap: 6px !important;
+  }
+  .top-controls button {
+    padding: 5px 8px !important;
+    font-size: 0.7rem !important;
+  }
+}
+
