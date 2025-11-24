@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Modern Virtual Business Card</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="light vertical">
+
+<div class="top-controls">
+  <button id="toggle-dark">🌙 Dark Mode</button>
+  <button id="toggle-layout">📐 Toggle Layout</button>
+</div>
+
+<div class="card">
+  <img src="Profile.jpg" class="profile" alt="Profile" />
+  <h1>Kudzaiishe Nyenza</h1>
+  <h3>Student • Full-Stack Developer</h3>
+
+  <p class="tagline">
+    I create modern, responsive websites and applications using HTML, CSS, JS,
+    React, and Node.js. Passionate about delivering clean UI, strong UX, and smooth performance.
+  </p>
+
+  <div class="skills">
+    <div class="chip">HTML</div>
+    <div class="chip">CSS</div>
+    <div class="chip">JavaScript</div>
+    <div class="chip">React</div>
+    <div class="chip">Node.js</div>
+    <div class="chip">SQL</div>
+    <div class="chip">GitHub</div>
+  </div>
+
+  <div class="links">
+    <a href="tel:+917291847303">📞 Call</a>
+    <a href="mailto:kudzienyenza@gmail.com">📧 Email</a>
+    <a href="https://www.linkedin.com/in/kudzaiishe-nyenza-7a1883220" target="_blank">💼 LinkedIn</a>
+    <a href="https://github.com/kudzie13" target="_blank">💻 GitHub</a>
+  </div>
+
+  <a href="data:text/vcard;charset=utf-8,BEGIN:VCARD%0AVERSION:3.0%0AFN:Kudzaiishe%20Nyenza%0ATITLE:Full%20Stack%20Developer%0ATEL:+917291847303%0AEMAIL:kudzienyenza@gmail.com%0AURL:https://github.com/kudzie13%0AEND:VCARD" 
+download="Kudzaiishe_Nyenza.vcf" 
+class="btn-download">⬇ Download vCard</a>
+
+</div>
+
+<script>
+  const darkToggle = document.getElementById('toggle-dark');
+  const layoutToggle = document.getElementById('toggle-layout');
+  const body = document.body;
+
+  darkToggle.onclick = () => {
+    body.classList.toggle('dark');
+  };
+
+  layoutToggle.onclick = () => {
+    body.classList.toggle('horizontal');
+    body.classList.toggle('vertical');
+  };
+</script>
+
+</body>
+</html>
