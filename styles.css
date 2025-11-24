@@ -410,41 +410,95 @@ body.horizontal .btn-download:hover {
   to { opacity: 1; transform: translateY(0) scale(1);} 
 }
 
+/* ==========================================================
+   ULTRA-MOBILE RESPONSIVE CARD (Credit-card style)
+   For phones smaller than 480px
+   ========================================================== */
+@media (max-width: 480px) {
 
-/* ---------- FIX: KEEP TOGGLE BUTTONS ABOVE CARD ---------- */
-.top-controls {
-  z-index: 9999;
-}
+  /* Body layout becomes single-column */
+  body.horizontal,
+  body.vertical {
+    flex-direction: column !important;
+    padding: 10px;
+    gap: 0;
+  }
 
-/* ---------- FIX: ADD DARK MODE STYLING FOR CARD ---------- */
-body.dark .card {
-  background: rgba(25,25,32,0.75);
-  border: 1px solid rgba(255,255,255,0.1);
-  backdrop-filter: blur(20px) saturate(140%);
-  color: #e5e7eb;
-}
-body.dark h1 { color: #f1f5f9; }
-body.dark h3 { color: #cbd5e1; }
-body.dark .tagline { color: #d1d5db; }
-body.dark .chip { background: rgba(255,255,255,0.08); color: #e8e8e8; }
-body.dark .links a { background: linear-gradient(135deg,#4f5eff,#2d3dd6); }
-body.dark .btn-download { background:#e5e7eb; color:#111; }
+  /* Card shrinks into compact mode */
+  .card {
+    width: 95% !important;
+    padding: 22px !important;
+    border-radius: 20px !important;
+    display: block !important;
+    text-align: center !important;
+    animation: none !important;
+  }
 
-/* ---------- CARD ROTATION EFFECT ON LAYOUT SWITCH ---------- */
-body.horizontal .card {
-  transform: rotateY(0deg);
-  animation: rotateCard 0.6s ease;
-  transform-style: preserve-3d;
-}
+  /* Profile becomes small and centered */
+  .profile {
+    width: 95px !important;
+    height: 95px !important;
+    border-radius: 16px !important;
+    margin: 0 auto 15px auto !important;
+  }
 
-@keyframes rotateCard {
-  0% { transform: rotateY(30deg) scale(0.96); opacity: 0.5; }
-  60% { transform: rotateY(-10deg) scale(1.02); opacity: 1; }
-  100% { transform: rotateY(0deg) scale(1); }
-}
+  /* Name & role scale down */
+  h1 {
+    font-size: clamp(1.2rem, 4vw, 1.5rem) !important;
+    margin-bottom: 5px;
+  }
 
-/* Vertical mode rotation reset */
-body.vertical .card {
-  transform: rotateY(0deg);
-  transition: 0.5s ease;
+  h3 {
+    font-size: clamp(0.8rem, 3vw, 1rem) !important;
+    margin-bottom: 12px;
+  }
+
+  /* Tagline becomes compact */
+  .tagline {
+    font-size: 0.8rem !important;
+    line-height: 1.35 !important;
+    margin-bottom: 18px !important;
+  }
+
+  /* Skills become tiny chips */
+  .skills {
+    justify-content: center !important;
+    gap: 8px !important;
+    margin-bottom: 18px !important;
+  }
+
+  .chip {
+    padding: 5px 10px !important;
+    font-size: 0.7rem !important;
+    border-radius: 14px !important;
+  }
+
+  /* Buttons become full-width and compact */
+  .links a {
+    padding: 10px 0 !important;
+    font-size: 0.85rem !important;
+    border-radius: 10px !important;
+  }
+
+  /* Download button scales down */
+  .btn-download {
+    padding: 10px !important;
+    width: 100% !important;
+    font-size: 0.85rem !important;
+    border-radius: 10px !important;
+  }
+
+  /* Top controls shrink */
+  .top-controls button {
+    padding: 6px 10px !important;
+    font-size: 0.7rem !important;
+    border-radius: 8px !important;
+  }
+
+  .top-controls {
+    top: 10px;
+    right: 10px;
+    gap: 6px;
+  }
+
 }
