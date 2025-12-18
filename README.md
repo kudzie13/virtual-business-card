@@ -34,24 +34,6 @@ virtual-business-card/
 └── README.md
 
 
-## 📖 How to Use / Run Locally
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/YOUR_USERNAME/virtual-business-card.git
-````
-
-2. Open the folder:
-
-   ```bash
-   cd virtual-business-card
-   ```
-
-3. Open `index.html` in any modern browser
-   (No server or installation required)
-
----
-
 ## 🎯 Purpose of the Project
 
 This project was created to:
@@ -71,5 +53,3 @@ This project was created to:
 * Export card as image/PDF
 * Theme customization options
 
-Just tell me what’s next 💪
-```
